@@ -1,30 +1,70 @@
-# Welcome to your Lovable project
+# TreeLink
 
-This project was built with [Lovable](https://lovable.dev).
+صفحة تعريف رقمية تجمع حضور **رزان بلاطة** المهني في مكان واحد. تتيح للزوار التعرّف عليها، واستكشاف معرض أعمالها وسيرتها الذاتية، والوصول بسرعة إلى ملفاتها على منصات العمل الحر ووسائل التواصل.
 
-## Build with Lovable
+صُممت الصفحة باللغة العربية وباتجاه من اليمين إلى اليسار، مع واجهة متجاوبة للحاسوب والهاتف وحركات تراعي إعدادات تقليل الحركة في الجهاز.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## محتويات الصفحة
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- نبذة تعريفية وصورة شخصية.
+- رابط إلى معرض الأعمال ورابط لتنزيل السيرة الذاتية.
+- روابط الملفات المهنية على مستقل، وخمسات، وUpwork، وبعيد، وفورلانسو، وBright Gaza.
+- وسائل التواصل عبر البريد الإلكتروني وLinkedIn.
+- بيانات وصفية لتحسين ظهور الصفحة عند مشاركتها.
 
-## Development
+## التقنيات
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+- React 19 وTypeScript.
+- TanStack Start وTanStack Router.
+- Vite وTailwind CSS 4.
+- Framer Motion للحركات، وLucide للأيقونات.
+- إعداد بناء ونشر متوافق مع Vercel عبر Nitro.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## المتطلبات
+
+- Node.js 20 أو أحدث.
+- npm.
+
+## التشغيل محليًا
+
+```bash
+git clone <repository-url>
+cd treelink
+npm install
 npm run dev
 ```
 
-## Built with
+يعرض Vite عنوان الصفحة المحلية في الطرفية بعد بدء خادم التطوير.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
-# TreeLink
+## الأوامر المتاحة
+
+| الأمر | الاستخدام |
+| --- | --- |
+| `npm run dev` | تشغيل خادم التطوير |
+| `npm run build` | إنشاء نسخة الإنتاج |
+| `npm run build:dev` | إنشاء نسخة بناء بوضع التطوير |
+| `npm run preview` | معاينة نسخة الإنتاج محليًا |
+| `npm run lint` | فحص الشيفرة باستخدام ESLint |
+
+## تخصيص المحتوى
+
+- عدّل بيانات التعريف والنبذة وروابط الأعمال والمنصات والتواصل في `src/routes/index.tsx`.
+- استبدل الصورة الشخصية والسيرة الذاتية في `src/assets/`، ثم حدّث الاستيرادات وأسماء الملفات في `src/routes/index.tsx` عند الحاجة.
+- عدّل الألوان والتنسيقات والتجاوب في `src/styles.css`.
+
+## بنية أساسية
+
+```text
+src/
+├── assets/          # الصورة الشخصية والسيرة الذاتية
+├── components/ui/   # مكونات الواجهة المشتركة
+├── routes/
+│   ├── __root.tsx   # غلاف التطبيق العام
+│   └── index.tsx    # الصفحة الرئيسية ومحتواها
+├── styles.css       # الأنماط العامة وأنماط الصفحة
+└── router.tsx       # إعداد التوجيه
+```
+
+## النشر
+
+المشروع مُعدّ للنشر على Vercel. اربط مستودع GitHub بالمشروع في Vercel، واترك إعدادات البناء الافتراضية ليستخدم إعداد Vite وNitro الموجود. لمزيد من التفاصيل، راجع [دليل النشر على Vercel](README-VERCEL-AR.md).
